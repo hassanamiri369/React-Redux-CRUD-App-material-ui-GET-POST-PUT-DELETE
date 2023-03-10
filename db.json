@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  } , 
+
+  "users" : [
+    {"id" : 1 , "name" : "ali" , "email" : "ali@gmail.com" , "contact" : 123456},
+    {"id" : 1 , "name" : "hassan" , "email" : "hassan@gmail.com" , "contact" : 789654123}
+  ]
+}
