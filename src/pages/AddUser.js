@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../Redux/action';
-import { Alert, Box, Button, TextField } from '@mui/material';
+import { Alert, Button, TextField } from '@mui/material';
 
 // style
 
@@ -46,11 +46,12 @@ const AddUser = () => {
 
 
     return (
-        <div className='addUser-container'>
+        <div>
 
             <div className='head'>
                 <h1>ADD USER</h1>
-                 <Alert severity='error' style={{textAlign : "center" , width : "70%"}}>{error && error}</Alert>
+                 {/* <Alert severity='error' style={{textAlign : "center" , width : "70%"}}>{error && error}</Alert> */}
+                 <div style={{backgroundColor : "blue" , width : "70%" , borderRadius : "5px"}}>{error && <Alert severity='error' >{error}</Alert>}</div>
             </div>
 
 
