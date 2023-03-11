@@ -1,9 +1,13 @@
 import React , {useState , useEffect}from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../Redux/action';
+
 
 const AddUser = () => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     
     const [state , setState] = useState({
         name : "",
@@ -31,6 +35,10 @@ const AddUser = () => {
 
         if(!name || !email || !address || !contact){
             setError("Please input all input field")
+        }else{
+            dispatch(addUser(state))
+            navigate("/")
+            setError("")
         }
     }
 
@@ -38,7 +46,10 @@ const AddUser = () => {
     return (
         <div className='addUser-container'>
            
-
+            <div>
+                <h1>ADD USER</h1>
+                <p>{error && <span>{error}</span>}</p>
+            </div>
            <div className='add-form'>
                <form autoComplete='off' noValidate onSubmit={handleSubmit}>
                <div>
