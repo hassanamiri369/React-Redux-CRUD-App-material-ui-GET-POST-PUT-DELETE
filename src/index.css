@@ -32,3 +32,45 @@ button{
   cursor: pointer;
  
 }
+
+.head{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+ margin-bottom: 20px;
+}
+
+
+/* form */
+
+
+form >div{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+}
+
+
+form > div > *{
+  width: 80%;
+
+}
+
+.buttons-form{
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  height: 150px;
+  
+}
+
+form >div > button{
+  width: 180px;
+  height: 40px;
+  
+}
