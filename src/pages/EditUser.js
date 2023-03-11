@@ -1,13 +1,29 @@
 import React , {useState , useEffect} from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
-import { addUser } from '../Redux/action'
+import { addUser, getSingleUser } from '../Redux/action'
 
 const EditUser = () => {
 
     const navigate = useNavigate()
+    const user = useSelector(state => state.users.user)
+    console.log('user' , user);
     const {id} = useParams()
+
+
+    useEffect(()=>{
+        dispatch(getSingleUser(id))
+    } , [id])
+
+
+    useEffect(()=>{
+        if(user){
+            setState({...user})
+        }
+    } , [user])
+
     const dispatch = useDispatch()
+
     
     const [state , setState] = useState({
         name : "",
@@ -53,16 +69,16 @@ const EditUser = () => {
             <p>{id}</p>
                <form autoComplete='off' noValidate onSubmit={handleSubmit}>
                <div>
-                    <input onChange={handleInputChange} placeholder='name' type="text" name='name' value={name} />
+                    <input onChange={handleInputChange} placeholder='name' type="text" name='name' value={name || ""} />
                 </div>
                 <div>
-                    <input onChange={handleInputChange} placeholder='email' type="text" name='email' value={email} />
+                    <input onChange={handleInputChange} placeholder='email' type="text" name='email' value={email || ""} />
                 </div>
                 <div>
-                    <input onChange={handleInputChange} placeholder='contact' type="text" name='contact' value={contact} />
+                    <input onChange={handleInputChange} placeholder='contact' type="text" name='contact' value={contact || ""} />
                 </div>
                 <div>
-                    <input onChange={handleInputChange} placeholder='address' type="text" name='address' value={address} />
+                    <input onChange={handleInputChange} placeholder='address' type="text" name='address' value={address || ""} />
                 </div>
                 <div>
                     <button type='submit'>edit user</button>
