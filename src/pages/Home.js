@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useState} from 'react'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteUser, loadUsers } from '../Redux/action';
@@ -25,6 +25,8 @@ const Home = () => {
     }
 
 
+
+
     return (
 
         <>
@@ -42,7 +44,7 @@ const Home = () => {
                         <span>{item.address}</span>
                         <span>
                             <button onClick={() => handleDelete(item.id)}>delete</button>
-                            <button>edit</button>
+                            <Link to={`/editUser/${item.id}`}><button>Edit</button></Link>
                         </span>
                     </div>
                 ))}
