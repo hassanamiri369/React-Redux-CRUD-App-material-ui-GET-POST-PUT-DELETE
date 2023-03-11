@@ -7,6 +7,9 @@ const deleteUSER = () => ({type : types.DELETE_USER})
 const addUSER = () =>({type : types.ADD_USER})
 const singleUSER = (user)=>({type : types.GET_SINGLE_USER , payload : user})
 
+
+const updateUSER = ()=>({type : types.UPDATE_USER})
+
 export const loadUsers = ()=>{
     return (dispatch)=>{
         axios.get("http://localhost:3004/users")
@@ -50,6 +53,17 @@ export const getSingleUser = (id)=>{
         .then((res)=>{
             dispatch(singleUSER(res.data))
            
+        })
+        .catch((err)=> console.log(err))
+    }
+}
+
+
+export const updateUser = (user , id)=>{
+    return (dispatch)=>{
+        axios.put(`http://localhost:3004/users/${id}` , user)
+        .then((res)=> {
+            dispatch(updateUSER())
         })
         .catch((err)=> console.log(err))
     }
