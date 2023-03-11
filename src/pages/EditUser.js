@@ -1,12 +1,12 @@
 import React , {useState , useEffect} from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { addUser } from '../Redux/action'
 
 const EditUser = () => {
 
     const navigate = useNavigate()
-    
+    const {id} = useParams()
     const dispatch = useDispatch()
     
     const [state , setState] = useState({
@@ -44,11 +44,13 @@ const EditUser = () => {
 
     return (
         <div>
+            <Outlet/>
              <div>
                 <h1>Edit USER</h1>
                 <p>{error && <span>{error}</span>}</p>
             </div>
            <div className='add-form'>
+            <p>{id}</p>
                <form autoComplete='off' noValidate onSubmit={handleSubmit}>
                <div>
                     <input onChange={handleInputChange} placeholder='name' type="text" name='name' value={name} />
