@@ -15,6 +15,14 @@ const userReducer = (state = initState , action) =>{
 
         case types.DELETE_USER : 
             return {...state , loading : false}
+        
+        case types.ADD_USER : 
+            return {...state , loading : false}
+
+
+            // set select user data in user object for edit and update
+        case types.GET_SINGLE_USER : 
+            return {...state , loading : false , user : action.payload}
         default : 
           return state
     }
