@@ -33,6 +33,9 @@ button{
  
 }
 
+a{
+  text-decoration: none;
+}
 .head{
   display: flex;
   flex-direction: column;
