@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
-import { addUser, getSingleUser } from '../Redux/action'
+import { addUser, getSingleUser, updateUser } from '../Redux/action'
 
 const EditUser = () => {
 
@@ -52,7 +52,7 @@ const EditUser = () => {
         if(!name || !email || !address || !contact){
             setError("Please input all input field")
         }else{
-            dispatch(addUser(state))
+            dispatch(updateUser(state , id))
             navigate("/")
             setError("")
         }
