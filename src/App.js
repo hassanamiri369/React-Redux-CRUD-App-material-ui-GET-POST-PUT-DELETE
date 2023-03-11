@@ -3,7 +3,7 @@ import {Routes , Route , Link} from "react-router-dom"
 
 
 // page
-import Home from './components/Home';
+import Home from './pages/Home';
 import AddUser from './pages/AddUser';
 
 
