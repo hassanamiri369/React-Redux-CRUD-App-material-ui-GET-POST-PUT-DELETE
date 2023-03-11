@@ -11,9 +11,6 @@ import EditUser from './pages/EditUser';
 const App = () => {
   return (
     <div>
-        <h1>React Redux CRUD APP Material ui - GET POST PUT DELETE</h1>
-
-
       <div className="Routes-content">
         <Routes>
             <Route path='/' element={<Home/>}/>
