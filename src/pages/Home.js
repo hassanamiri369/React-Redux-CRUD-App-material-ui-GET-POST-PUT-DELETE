@@ -24,6 +24,10 @@ const Home = () => {
 
     }
 
+    // if(loading){
+    //     return <h2>Loading ...</h2>
+    // }
+
 
 
 
@@ -36,6 +40,8 @@ const Home = () => {
                 </div>
             </div>
             <div className='home-container'>
+                {loading && <h1>Loading data...</h1>}
+
                 {users && users.map((item, index) => (
                     <div key={item.id}>
                         <span>{item.name}</span>
