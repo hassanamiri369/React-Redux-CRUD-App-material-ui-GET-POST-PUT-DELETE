@@ -5,6 +5,7 @@ import * as types from "./actionType";
 const getUSER = (users) =>({type : types.GET_USERS , payload : users})
 const deleteUSER = () => ({type : types.DELETE_USER})
 const addUSER = () =>({type : types.ADD_USER})
+const singleUSER = (user)=>({type : types.GET_SINGLE_USER , payload : user})
 
 export const loadUsers = ()=>{
     return (dispatch)=>{
@@ -39,5 +40,17 @@ export const addUser = (user)=>{
             dispatch(loadUsers())
         })
         .catch((error) => console.log(error))
+    }
+}
+
+
+export const getSingleUser = (id)=>{
+    return (dispatch)=>{
+        axios.get(`http://localhost:3004/users/${id}`)
+        .then((res)=>{
+            dispatch(singleUSER(res.data))
+           
+        })
+        .catch((err)=> console.log(err))
     }
 }
