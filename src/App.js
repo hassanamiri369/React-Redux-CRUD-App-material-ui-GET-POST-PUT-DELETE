@@ -4,6 +4,7 @@ import {Routes , Route , Link} from "react-router-dom"
 
 // page
 import Home from './components/Home';
+import AddUser from './pages/AddUser';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <div className="Routes-content">
         <Routes>
             <Route path='/' element={<Home/>}/>
+            <Route path="/addUser" element={<AddUser/>}/>
         </Routes>
       </div>
     </div>
