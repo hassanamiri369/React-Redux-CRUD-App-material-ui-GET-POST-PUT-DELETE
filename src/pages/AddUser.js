@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../Redux/action';
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, Button, MenuItem, Select, TextField } from '@mui/material';
 
 // style
 
@@ -15,10 +15,11 @@ const AddUser = () => {
         name: "",
         email: "",
         contact: "",
-        address: ""
+        address: "",
+        status : "InActive"
     })
 
-    const { name, email, contact, address } = state;
+    const { name, email, contact, address , status } = state;
 
     const [error, setError] = useState("");
 
@@ -35,7 +36,7 @@ const AddUser = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (!name || !email || !address || !contact) {
+        if (!name || !email || !address || !contact || !status ) {
             setError("Please input all input field")
         } else {
             dispatch(addUser(state))
@@ -69,6 +70,12 @@ const AddUser = () => {
                     </div>
                     <div>
                         <TextField required placeholder='tehran ,Navab ,street 23' onChange={handleInputChange} label="Address" variant='outlined' type='text' name='address' value={address} />
+                    </div>
+                    <div>
+                        <Select value={state.status} label="Status" name="status" onChange={handleInputChange}>
+                            <MenuItem value="InActive" >InActive</MenuItem>
+                            <MenuItem value="Active">Active</MenuItem>
+                        </Select>
                     </div>
                     <div className='buttons-form'>
                         <Button color='primary' type='submit' variant='contained'>Add User</Button>
