@@ -61,6 +61,7 @@ const Home = () => {
                                 <TableCell>Email</TableCell>
                                 <TableCell>Contact</TableCell>
                                 <TableCell>Address</TableCell>
+                                <TableCell>Status</TableCell>
                                 <TableCell>Action</TableCell>
                             </TableRow>
                         </TableHead>
@@ -74,6 +75,7 @@ const Home = () => {
                                     <TableCell >{item.email}</TableCell>
                                     <TableCell >{item.contact}</TableCell>
                                     <TableCell >{item.address}</TableCell>
+                                    <TableCell>{item.status}</TableCell>
                                     <TableCell >
                                         <Button style={{margin : "3px"}} variant="contained" color="secondary" onClick={() => handleDelete(item.id)}>delete</Button>
                                         <Link  to={`/editUser/${item.id}`}><Button style={{margin : "3px"}} variant='contained'>Edit</Button></Link>
@@ -85,22 +87,6 @@ const Home = () => {
                 </TableContainer>
             </div>
            
-            {/* <div className='home-container'>
-                {loading && <h1>Loading data...</h1>}
-
-                {users && users.map((item, index) => (
-                    <div key={item.id}>
-                        <span>{item.name}</span>
-                        <span>{item.email}</span>
-                        <span>{item.contact}</span>
-                        <span>{item.address}</span>
-                        <span>
-                            <button onClick={() => handleDelete(item.id)}>delete</button>
-                            <Link to={`/editUser/${item.id}`}><button>Edit</button></Link>
-                        </span>
-                    </div>
-                ))}
-            </div> */}
         </div>
     )
 }
