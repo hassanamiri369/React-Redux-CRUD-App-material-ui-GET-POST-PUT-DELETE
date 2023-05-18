@@ -18,24 +18,27 @@
   },
   "users": [
     {
-      "id": 1,
       "name": "ali",
       "email": "ali@gmail.com",
-      "contact": 123456,
-      "address": "qom"
-    },
-    {
-      "name": "reza",
-      "email": "reza@gmail.com",
-      "contact": "s7895",
-      "address": "zanjan",
-      "id": 2
+      "contact": "09109705963",
+      "address": "قزوین ، شهر ارداق ، خیابان طالقانی ، روبه روی کانون فرهنگی ، پلاک 8",
+      "status": "Active",
+      "id": 1
     },
     {
       "name": "hassan",
-      "email": "hassan@gmail.com",
+      "email": "hassanamiri369@gmail.com",
       "contact": "09109705963",
-      "address": "qom",
+      "address": "قزوین ، شهر ارداق ، خیابان طالقانی ، روبه روی کانون فرهنگی ، پلاک 8",
+      "status": "InActive",
+      "id": 2
+    },
+    {
+      "name": "sdf",
+      "email": "sdf",
+      "contact": "2",
+      "address": "sdf",
+      "status": "Active",
       "id": 3
     }
   ]
