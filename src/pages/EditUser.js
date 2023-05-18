@@ -2,7 +2,7 @@ import React , {useState , useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import {getSingleUser, updateUser } from '../Redux/action'
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, Button, MenuItem, Select, TextField } from '@mui/material';
 
 const EditUser = () => {
 
@@ -30,10 +30,11 @@ const EditUser = () => {
         name : "",
         email : "",
         contact : "",
-        address : ""
+        address : "",
+        status : ""
     })
 
-    const {name , email , contact , address} = state;
+    const {name , email , contact , address , status} = state;
 
     const [error , setError] = useState("");
 
@@ -83,6 +84,12 @@ const EditUser = () => {
                 <div>
                     <TextField required placeholder='tehran ,Navab ,street 23' onChange={handleInputChange} label="Address" variant='outlined' type='text' name='address' value={address || ""} />
                 </div>
+                <div>
+                        <Select value={state.status} label="Status" name="status" onChange={handleInputChange}>
+                            <MenuItem value="InActive" >InActive</MenuItem>
+                            <MenuItem value="Active">Active</MenuItem>
+                        </Select>
+                    </div>
                 <div className='buttons-form'>
                     <Button color='primary' type='submit' variant='contained'>Edit User</Button>
                     
